@@ -1,42 +1,81 @@
-Mobile Recommender System
-A sleek Streamlit web app to recommend mobile phones based on user selection, with filters for price and ratings. Displays recommendations in LKR (Rs) with images, leveraging content-based filtering and cosine similarity for personalized suggestions.
-Features
+📱 Mobile Recommender System
 
-Select a mobile and get top 10 similar phones and 10 varied options.
-Filter by price range and minimum rating.
-Modern UI with card-based displays, gradient header, and animations.
+A sleek Streamlit web application that recommends mobile phones based on user preferences using content-based filtering. The app allows users to filter phones by price range and minimum ratings, and presents results in LKR (Rs) with engaging visuals and a modern UI.
 
-Installation
+✨ Features
 
-Clone the repository:git clone <repository-url>
-cd mobile-recommender-system
+    Personalized Recommendations
+    Select a mobile to view:
 
+        Top 10 similar phones using cosine similarity
 
-Install dependencies:pip install streamlit pandas
+        10 varied phones for broader options
 
+    Filter Options
 
-Ensure src/model/dataframe.pkl and src/model/similarity.pkl are in place.
+        Set your price range
 
-Usage
+        Choose a minimum rating
 
-Run the app:streamlit run app.py
+    Modern UI
 
+        Card-based layout for results
 
-Open the browser at http://localhost:8501.
-Select a mobile, adjust filters, and click "Recommend" to view results.
+        Gradient header, subtle animations for a polished look
 
-Algorithms
+🚀 Installation
 
-Content-Based Filtering: Uses features from the corpus column.
-Cosine Similarity: Computes similarity between mobiles based on vectorized text data.
-Random Sampling: Introduces variety in recommendations.
+    Clone the repository:
+    git clone https://github.com/your-username/mobile-recommender-system.git
+    cd mobile-recommender-system
 
-Data
+    Install dependencies:
+    pip install streamlit pandas
 
-dataframe.pkl: Contains columns: name, ratings, price, imgURL, corpus.
-similarity.pkl: Precomputed similarity matrix for mobiles.
+    Ensure required files are in place:
+    src/model/dataframe.pkl
+    src/model/similarity.pkl
 
-Contributing
-Contributions are welcome! Submit a pull request or open an issue for suggestions.
-Author
+▶️ Usage
+
+    Run the app:
+    streamlit run app.py
+
+    Open in your browser:
+    http://localhost:8501
+
+    Start exploring:
+
+        Select a mobile
+
+        Adjust filters
+
+        Click "Recommend" to view suggestions
+
+🧠 Algorithms
+
+    Content-Based Filtering
+    Utilizes the corpus column derived from mobile features
+
+    Cosine Similarity
+    Computes similarity scores between mobiles using vectorized data
+
+    Random Sampling
+    Adds variety to recommendations by randomly selecting from similar groups
+
+📊 Data
+
+    dataframe.pkl:
+    Contains mobile data with fields: name, ratings, price, imgURL, corpus
+
+    similarity.pkl:
+    Precomputed cosine similarity matrix based on the corpus
+
+🤝 Contributing
+
+Contributions are welcome!
+Feel free to fork the repository, submit a pull request, or open an issue with ideas or bugs
+
+👤 Author
+
 Sudeepa Wanigarathna
