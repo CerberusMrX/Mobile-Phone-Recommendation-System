@@ -1,81 +1,134 @@
-📱 Mobile Recommender System
+# 📱 Mobile Recommender System 🛍️
 
-A sleek Streamlit web application that recommends mobile phones based on user preferences using content-based filtering. The app allows users to filter phones by price range and minimum ratings, and presents results in LKR (Rs) with engaging visuals and a modern UI.
+## Smart Mobile Phone Recommendations using Content-Based Filtering
 
-✨ Features
+The **Mobile Recommender System** is a sleek, modern **Streamlit web application** that provides personalized mobile phone recommendations based on user preferences. By leveraging **Content-Based Filtering** and **Cosine Similarity**, the app helps users discover devices that closely match their interests, while offering flexible filtering options.
 
-    Personalized Recommendations
-    Select a mobile to view:
+> **Why use this?** Get personalized phone recommendations based on specific features, price, and rating, presented in a modern, easy-to-use interface.
 
-        Top 10 similar phones using cosine similarity
+-----
 
-        10 varied phones for broader options
+## ✨ Features Overview
 
-    Filter Options
+The application is built around personalization and a great user experience.
 
-        Set your price range
+### 🎯 Personalized Recommendations
 
-        Choose a minimum rating
+Based on a mobile phone selected by the user, the system generates two types of recommendations:
 
-    Modern UI
+  * **Top 10 Similar Phones:** The 10 most similar phones are identified using **Cosine Similarity** on feature-based vectors.
 
-        Card-based layout for results
+[Image of Content-Based Filtering Process]
 
-        Gradient header, subtle animations for a polished look
+  * **10 Varied Options:** A set of 10 phones, selected via **Random Sampling**, is provided to offer a broader range of similar, yet diverse, options.
 
-🚀 Installation
+### 🔍 Filter Options
 
-    Clone the repository:
-    git clone https://github.com/your-username/mobile-recommender-system.git
-    cd mobile-recommender-system
+Users can refine the recommendations instantly using interactive sidebar controls:
 
-    Install dependencies:
-    pip install streamlit pandas
+  * **Price Range:** Set a minimum and maximum budget (in **LKR/Rs**).
+  * **Minimum Rating:** Choose the lowest acceptable rating.
 
-    Ensure required files are in place:
-    src/model/dataframe.pkl
-    src/model/similarity.pkl
+### 🎨 Modern & Responsive UI
 
-▶️ Usage
+  * **Card-Based Results:** Recommendations are displayed in visually appealing, digestible cards.
+  * **Polished Look:** Features a gradient header and subtle animations for a premium, professional web application feel.
 
-    Run the app:
-    streamlit run app.py
+-----
 
-    Open in your browser:
-    http://localhost:8501
+## 🧠 Core Algorithms
 
-    Start exploring:
+This system relies on robust machine learning techniques for accuracy and variety.
 
-        Select a mobile
+| Algorithm | Role |
+| :--- | :--- |
+| **Content-Based Filtering** | Generates feature vectors (the 'corpus') for each mobile based on its specifications (e.g., camera, processor, storage). |
+| **Cosine Similarity** | Measures the similarity between the feature vectors of the selected phone and all other phones. The higher the score, the more alike the phones are. |
+| **Random Sampling** | Used to inject **diversity** by selecting a subset of similar mobiles randomly, preventing users from seeing only near-identical items. |
 
-        Adjust filters
+-----
 
-        Click "Recommend" to view suggestions
+## 📊 Data & Model Files
 
-🧠 Algorithms
+The application relies on two precomputed files, which must be present in the `src/model/` directory:
 
-    Content-Based Filtering
-    Utilizes the corpus column derived from mobile features
+| File Name | Purpose | Data Fields |
+| :--- | :--- | :--- |
+| `dataframe.pkl` | Primary data source. | `name`, `ratings`, `price` (LKR), `imgURL`, `corpus` (feature string). |
+| `similarity.pkl` | Precomputed model. | **Cosine Similarity Matrix** based on the `corpus` column. |
 
-    Cosine Similarity
-    Computes similarity scores between mobiles using vectorized data
+-----
 
-    Random Sampling
-    Adds variety to recommendations by randomly selecting from similar groups
+## 🚀 Installation & Setup
 
-📊 Data
+Get the application running on your local machine quickly.
 
-    dataframe.pkl:
-    Contains mobile data with fields: name, ratings, price, imgURL, corpus
+### 1\. Clone the Repository
 
-    similarity.pkl:
-    Precomputed cosine similarity matrix based on the corpus
+```bash
+git clone https://github.com/your-username/mobile-recommender-system.git
+cd mobile-recommender-system
+```
 
-🤝 Contributing
+### 2\. Install Dependencies
 
-Contributions are welcome!
-Feel free to fork the repository, submit a pull request, or open an issue with ideas or bugs
+You only need `streamlit` and `pandas` to run the application.
 
-👤 Author
+```bash
+pip install streamlit pandas
+```
 
-Sudeepa Wanigarathna
+### 3\. Verify Model Files
+
+Ensure the necessary model files are located in the correct path.
+
+```
+src/
+└── model/
+    ├── dataframe.pkl
+    └── similarity.pkl
+```
+
+-----
+
+## ▶️ Usage
+
+### Run the App
+
+Execute the main application file using Streamlit:
+
+```bash
+streamlit run app.py
+```
+
+### Access
+
+Open your web browser and navigate to:
+
+```
+http://localhost:8501
+```
+
+### Explore Recommendations
+
+1.  **Select a mobile** from the dropdown menu.
+2.  **Adjust the filters** (Price Range, Minimum Rating) on the sidebar.
+3.  Click the **"Recommend"** button to view your personalized suggestions\!
+
+-----
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome\!
+
+1.  Fork the repository.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+## 👤 Author
+
+  * **Sudeepa Wanigarathna**
+
+-----
